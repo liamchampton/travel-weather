@@ -17,5 +17,6 @@ help:
 	@echo ""
 	@echo "Targets:"
 	@echo "  run       Start the application using uvicorn"
+	@echo "  test      Run the tests using pytest"
 	@echo "  help      use the command 'make run' to start the application"
 .PHONY: help
