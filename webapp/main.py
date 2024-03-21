@@ -1,6 +1,6 @@
 import json
 from os.path import dirname, abspath, join
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -33,8 +33,14 @@ def countries():
 
 @app.get('/countries/{country}/{city}/{month}')
 def monthly_average(country: str, city: str, month: str):
-    return data[country][city][month]
-
+    country = country.capitalize()
+    city = city.capitalize()
+    month = month.capitalize()
+    try:
+        return data[country][city][month]
+    except KeyError:
+        raise HTTPException(status_code=404, detail="invalid country, city or month")
+        
 # Generate the OpenAPI schema:
 openapi_schema = app.openapi()
 with open(join(wellknown_path, "openapi.json"), "w") as f:
