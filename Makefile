@@ -9,6 +9,9 @@ HOST := 0.0.0.0
 run:
 	/home/vscode/venv/bin/uvicorn --host $(HOST) $(APP_MODULE) --reload
 
+test:
+	/home/vscode/venv/bin/pytest
+
 help:
 	@echo "Usage: make [target]"
 	@echo ""

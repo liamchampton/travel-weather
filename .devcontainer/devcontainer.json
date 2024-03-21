@@ -21,9 +21,10 @@
 		  "python.defaultInterpreterPath": "/home/vscode/venv/bin/python"
 		},
 		"extensions": [
-		  "ms-python.python",
-		  "ms-python.vscode-pylance",
-		  "GitHub.copilot-chat"
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"GitHub.copilot-chat",
+			"ms-vscode.makefile-tools"
 		]
 	  }
 	},
